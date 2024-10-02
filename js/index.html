@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #009688;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h2 {
+            margin: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .destination {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .destination:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .description {
+            display: none;
+            padding: 10px 0;
+        }
+        button {
+            background: #009688;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #00796b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Explore Your Next Adventure</h1>
+</header>
+
+<div class="container">
+    <div class="destination" id="westernDest">
+        <img src="images/alpine.jpg" alt="Western Adventure">
+        <h2 id="westerntitle">Western Adventure</h2>
+        <div class="description" id="westernDescription">
+            A typical tour is our Western Adventure tour, featuring activities which can include white water rafting on the Colorado river, desert exploring, horse riding in the Wild West.
+        </div>
+        <button onclick="toggleDescription('westernDescription')">Learn More</button>
+    </div>
+
+    <div class="destination" id="borneoDest">
+        <img src="images\alpine.jpg" alt="Borneo Adventure">
+        <h2 id="borneotitle">Borneo Adventure</h2>
+        <div class="description" id="borneoDescription">
+            A 15-day safari exploring the forests and beaches of Borneo. You will explore the forests of Kinabalu, climb the highest peak in South East Asia, and come in close contact with the Orang Utan, the remarkable 'man of the forest'.
+        </div>
+        <button onclick="toggleDescription('borneoDescription')">Learn More</button>
+    </div>
+</div>
+
+<script src="js/eventlisteners.js"></script>
+<script>
+    function toggleDescription(descriptionId) {
+        const description = document.getElementById(descriptionId);
+        if (description.style.display === "block") {
+            description.style.display = "none";
+        } else {
+            description.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
